@@ -1,0 +1,8 @@
+# PC/SC smart card access. Works on Windows, macOS and Linux.
+# On Windows it uses the built-in "Smart Card" (WinSCard) service.
+# On macOS it uses the built-in PCSC framework.
+# On Linux it needs the pcscd daemon + libpcsclite.
+pyscard>=2.0.7
+
+# X.509 certificate parsing / display.
+cryptography>=42.0.0

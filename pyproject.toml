@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "piv-smartcard"
+version = "0.1.0"
+description = "Cross-platform (Windows/macOS/Linux) PIV smart card library to read X.509 certificates over PC/SC. A Python port of GoogleChromeLabs/web-smartcard-demo."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Amandeep", email = "amandeep242712@gmail.com" }]
+keywords = ["smartcard", "piv", "pcsc", "pyscard", "x509", "yubikey", "apdu"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pyscard>=2.0.7",
+    "cryptography>=42.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "build>=1.0", "twine>=5.0"]
+
+[project.urls]
+Homepage = "https://github.com/amandeepsdet/piv-smartcard"
+Repository = "https://github.com/amandeepsdet/piv-smartcard"
+Issues = "https://github.com/amandeepsdet/piv-smartcard/issues"
+Changelog = "https://github.com/amandeepsdet/piv-smartcard/blob/main/CHANGELOG.md"
+
+[project.scripts]
+piv-smartcard = "smartcard_demo.cli:main"
+
+[project.gui-scripts]
+piv-smartcard-gui = "smartcard_demo.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+smartcard_demo = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
