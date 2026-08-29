@@ -13,7 +13,7 @@ It is a Python port of [GoogleChromeLabs/web-smartcard-demo](https://github.com/
 The original is a ChromeOS-only Isolated Web App that uses the experimental
 **Web Smart Card API** to read the X.509 *Card Authentication* certificate from a
 PIV smart card. That API does not exist on Windows or macOS, so this project keeps
-the same architecture but talks to the **native PC/SC stack** through
+the same architecture but talk to the **native PC/SC stack** through
 [`pyscard`](https://pyscard.sourceforge.io/), which works on **Windows, macOS and Linux**.
 
 ## Architecture
